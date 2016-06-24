@@ -1,0 +1,16 @@
+./memleak 1
+
+invalid read error:
+line 11; removed changed <= to <.
+
+lost block of memory:
+line 58; added delete [] data.
+
+
+./memleak 2
+
+invalid write of size 1:
+line 36: change otherword[len+1] = '\0'; to otherword[len] = '\0';
+
+extra freed block:
+line 37: removed delete word[]

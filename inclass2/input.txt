@@ -1,0 +1,5 @@
+Plain Egg | 1.45
+Bacon and Egg | 2.45
+Muffin | .99
+French Toast | 1.99
+Coffee | .50

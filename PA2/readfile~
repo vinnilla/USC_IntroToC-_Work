@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+#include <iomanip> 
+#include <fstream>
+#include <sstream>
+#include <stdio.h>
+#include <string.h>
+
+using namespace std;
+
+// Define arrays
+string teamArray[8];
+string tdArray[8];
+string fgArray[8];
+
+int main()
+{
+	char line[80];
+	int comma;
+	char teamName[40];
+	char tdChance[10];
+	char fgChance[10];
+	int counter = 0;
+
+	ifstream ifile;
+	ifile.open(Input);
+	for (int i = 0; i < 8; i++)
+	{
+		line = ifile.getline();
+		comma = strcspn (line, ',');
+		for (int i = 0; i < comma; i++)
+		{
+			teamName[i] = line[i];
+		}
+		for (int i = comma+2; i < comma+6; i++)
+		{
+			int count = 0;
+			tdChance[count] = line[i];
+		)
+		for (int i = comma+8; i < comma+12; i++)
+		{
+			int count = 0;
+			fgChance[count] = line[i];
+		}		
+
+		teamArray[counter] = teamName;
+		tdArray[counter] = tdChance;
+		fgArray[counter] = fgChance;
+		counter ++;
+
+	}	
+	ifile.close();
+return 0;
+}

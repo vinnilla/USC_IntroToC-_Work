@@ -1,0 +1,90 @@
+System Name: Schedule
+
+System Description:
+The system is designed to read an input file and create a class schedule with the given information.
+The program will output the optimal schedule of classes orgranized first by classes, then by classrooms.
+
+Global Data
+	structs are set up globally
+	All arrays for all types of structs are declared globally but allocated space when needed
+	Counters for number of rooms, courses and scheduled courses are declared globally
+
+Function Descriptions
+
+Function Name: ReadFile
+	formal parameters and type: none
+	fuction return type: void
+	fuction description: prompts user for file name, read file and copies all information into dynamically allocated struct arrays
+
+Function Name: Sort_Rooms
+	formal parameters and type: none
+	fuction return type: void
+	fuction description: it will bubblesort the Room type array by room capacity in descending order
+	This function is needed for the scheduling algorithm to operate properly
+
+Function Name: Sort_Class
+	formal parameters and type: none
+	fuction return type: void
+	fuction description: This will bubblesort scheduled_Section type array by class prefix and number in ascending order (needed for class output)
+
+Function Name: Sort_Capacity
+	formal parameters and type: none
+	fuction return type: void
+	fuction description: This will bubblesort scheduled_Section type array by classroom capacity in descending order (needed for classroom output)
+
+Function Name: OutputCheck
+	formal parameters and type: none
+	fuction return type: void
+	fuction description: This was a function used to test if the ReadFile function successfully placed information into correct arrays
+
+Function Name: fixTime
+	formal parameters and type: int Time, int Minutes
+	fuction return type: int
+	fuction description: Takes Time (military time) and Minutes (length of class) and converts Time into minutes before finding the sum and reconverting back ot military time format. This is then returned as an int value representing the end time of the class.
+
+Function Name: roomsMatch
+	formal parameters and type: Room scheduleRoom, Room room
+	fuction return type: bool
+	fuction description: Takes in two Room type variables and compares these two variables. If variables are identical, true is return. Else, false is returned.
+
+Function Name: daysMatch
+	formal parameters and type: int* scheduleDays, int* days
+	fuction return type: bool
+	fuction description:  Takes in two days type arrays and compares the 4 values within each array. If all four values are equivalent, true is returned. Else false is returned.
+
+Function Name: timesOverlap
+	formal parameters and type: int scheduledStartTime, int scheduledEndTime, int constraintStartTime, int constraintEndTime, int numMinutes 
+	fuction return type: int
+	fuction description: Takes all of these ints and tests to see if a class can be scheduled. It calls on fixTime for assistance and will return the start time if the class can be scheduled.
+
+Function Name: scheduleAvailable
+	formal parameters and type: Section sectionToSchedule, int roomIndex
+	fuction return type: bool
+	fuction description: Takes the section type variable and the room index and checks to see if any set of times are available for the class. Calls on previous four functions. If class can be scheduled, copies information into scheduledSections type array and returns true.
+
+Function Name: scheduleSections
+	formal parameters and type: none 
+	fuction return type: bool
+	fuction description: Goes through each room and tries to find the classes that will only fit in the larger rooms and schedules them first. Calls on scheduleAvailable function. Returns false if a class cannot be scheduled and returns ture if all classes are scheduled.
+
+Function Name: OutputByClass
+	formal parameters and type: none 
+	fuction return type: void
+	fuction description: Outputs the schedule organized by class in the format provided.
+
+Function Name: OutputByRoom
+	formal parameters and type: none
+	fuction return type: void
+	fuction description: Outputs the schedule organized by room in the format provide. (Not enough sorting was done so format is not completely correct)
+
+Function Name: main
+	formal parameters and type: int argc, char* argv[] but parameters are not used
+	fuction return type: int (not important)
+	fuction description: Calls on all the functions in correct order for scheduling program to work!
+
+
+Compiling and Testing:
+	Compile: g++ -g -o Schedule Schedule.cpp
+	Test: 
+		1. User enters file name as a string. The program will test the string, open a file if it exists and run the program.
+		2. If the string is not the correct file name or the file is improperly formatted, the program will close.

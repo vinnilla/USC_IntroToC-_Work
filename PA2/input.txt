@@ -1,0 +1,8 @@
+Trojans, 0.80, 0.60
+Bruins, 0.20, 0.30
+Bears, 0.60, 0.50
+Trees, 0.50, 0.40
+Ducks, 0.40, 0.80
+Beavers, 0.50, 0.10
+Huskies, 0.80, 0.40
+Cougars, 0.10, 0.90

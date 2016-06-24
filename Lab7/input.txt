@@ -1,0 +1,16 @@
+-- building room_number capacity
+SAL 210 30
+OHE 100 120
+OHE 120 50
+
+-- ID prefix course# sect# #minutes #mtgsperweek #students
+20001 CSCI 101 01 110 2 40
+20002 CSCI 101 02 110 2 60
+20003 CSCI 101 03 110 2 100
+20004 CSCI 103 01 90 2 50
+
+-- ID days_constraint start_constraint end_constraint
+20001 MW 1000 1400
+20002 MW 1000 1400
+20003 TR 1000 1400
+20004 TR 0800 1200
