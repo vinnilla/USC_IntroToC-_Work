@@ -16,3 +16,4 @@ Both final versions of monopoly do not have mortgaging property implemented beca
 Full descriptions of each project are stored as design.txt's in the corresponding folders.
 
 A resolution of at least 1600x900 is needed to display the game board in its entirety.
+All work was done in Ubuntu.
